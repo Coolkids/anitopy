@@ -186,8 +186,9 @@ def match_multi_episode_pattern(elements, word, token):
 
 
 def match_season_and_episode_pattern(elements, word, token):
-    pattern = 'S?(\\d{1,2})(?:-S?(\\d{1,2}))?' +\
-              '(?:x|[ ._-x]?E)(\\d{1,4})(?:-E?(\\d{1,4}))?' +\
+    pattern = 'S?(\\d{1,2})(?:-S?(\\d{1,2}))?' + \
+              '(?:x|[ ._-x]?E)' + \
+              '(\\d{1,4})(?:-E?(\\d{1,4}))?' +\
               '(?:[vV](\\d))?$'
     match = re.match(pattern, word, flags=re.IGNORECASE)
 

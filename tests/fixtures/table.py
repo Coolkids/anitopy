@@ -2160,5 +2160,23 @@ table = [
             'file_name': "[M-L-Stuffs] Futari wa Precure (Pretty Cure) 01",
             'release_group': 'M-L-Stuffs'
         }
+    ], [
+        "[Airota&VCB-Studio] Toaru Kagaku no Accelerator [01][Ma10p_1080p][x265_flac_aac]",
+        None,
+        {
+            'anime_title': 'Toaru Kagaku no Accelerator',
+            'episode_number': '01',
+            'file_name': "[Airota&VCB-Studio] Toaru Kagaku no Accelerator [01][Ma10p_1080p][x265_flac_aac]",
+            'release_group': 'Airota&VCB-Studio'
+        }
+    ], [
+        "[Airota&VCB-Studio] Toaru Kagaku no Accelerator S01E01 [Ma10p_1080p][x265_flac_aac]",
+        None,
+        {
+            'anime_title': 'Toaru Kagaku no Accelerator',
+            'episode_number': '01',
+            'file_name': "[Airota&VCB-Studio] Toaru Kagaku no Accelerator [01][Ma10p_1080p][x265_flac_aac]",
+            'release_group': 'Airota&VCB-Studio'
+        }
     ],
 ]

@@ -43,7 +43,7 @@ class KeywordManager:
             'TV'])
         self.add(ElementCategory.ANIME_TYPE,
                  options_unidentifiable_unsearchable,
-                 ['SP'])  # e.g. "Yumeiro Patissiere SP Professional"
+                 ['SP'])  # e.g. "Yumeiro Patissiere SP Professiona'
         self.add(ElementCategory.ANIME_TYPE, options_unidentifiable_invalid, [
             'ED', 'ENDING', 'NCED',
             'NCOP', 'OP', 'OPENING',
@@ -51,15 +51,21 @@ class KeywordManager:
 
         self.add(ElementCategory.AUDIO_TERM, options_default, [
             # Audio channels
-            '2.0CH', '2CH', '5.1', '5.1CH', 'DTS', 'DTS-ES', 'DTS5.1',
-            'TRUEHD5.1',
+            '2.0CH', '2CH', '5.1', '5.1CH', '7.1', '7.1CH', 'DTS', 'DTS-ES', 'DTS5.1',
+            'DOLBY TRUEHD', 'TRUEHD', 'TRUEHD5.1',
             # Audio codec
             'AAC', 'AACX2', 'AACX3', 'AACX4', 'AC3', 'EAC3', 'E-AC-3',
             'FLAC', 'FLACX2', 'FLACX3', 'FLACX4', 'LOSSLESS', 'MP3', 'OGG',
             'VORBIS',
+            'ATMOS', 'DOLBY ATMOS',
             # Audio language
             'DUALAUDIO', 'DUAL AUDIO', 'DUAL-AUDIO',
-            'MULTIAUDIO', 'MULTI AUDIO', 'MULTI-AUDIO'])
+            'MULTIAUDIO', 'MULTI AUDIO', 'MULTI-AUDIO',
+        ])
+
+        self.add(ElementCategory.AUDIO_TERM, options_unidentifiable, [
+            'OPUS'
+        ])
 
         self.add(ElementCategory.DEVICE_COMPATIBILITY, options_default, [
             'IPAD3', 'IPHONE5', 'IPOD', 'PS3', 'XBOX', 'XBOX360'])
@@ -81,9 +87,11 @@ class KeywordManager:
             'ASS', 'SRT'])
 
         self.add(ElementCategory.LANGUAGE, options_default, [
-            'ENG', 'ENGLISH', 'ESPANOL', 'JAP', 'PT-BR', 'SPANISH', 'VOSTFR'])
+            'ENG', 'ENGLISH', 'ESPANOL', 'JAP', 'PT-BR', 'SPANISH', 'VOSTFR',
+            'GB', 'CHS', 'JP', 'BIG5', 'CHT', '日文', 'JPN'
+        ])
         self.add(ElementCategory.LANGUAGE, options_unidentifiable, [
-            'ESP', 'ITA'])  # e.g. "Tokyo ESP", "Bokura ga Ita"
+            'ESP', 'ITA'])  # e.g. "Tokyo ESP', "Bokura ga Ita"
 
         self.add(ElementCategory.OTHER, options_default, [
             'REMASTER', 'REMASTERED', 'UNCENSORED', 'UNCUT',
@@ -95,7 +103,7 @@ class KeywordManager:
         self.add(ElementCategory.RELEASE_INFORMATION, options_default, [
             'BATCH', 'COMPLETE', 'PATCH', 'REMUX'])
         self.add(ElementCategory.RELEASE_INFORMATION, options_unidentifiable, [
-            'END', 'FINAL'])  # e.g. "The End of Evangelion", "Final Approach"
+            'END', 'FINAL'])  # e.g. "The End of Evangelion', "Final Approach"
 
         self.add(ElementCategory.RELEASE_VERSION, options_default, [
             'V0', 'V1', 'V2', 'V3', 'V4'])
@@ -108,24 +116,31 @@ class KeywordManager:
             'WEBCAST', 'WEBRIP'])
 
         self.add(ElementCategory.SUBTITLES, options_default, [
-            'ASS', 'BIG5', 'DUB', 'DUBBED', 'HARDSUB', 'HARDSUBS', 'RAW',
+            'ASS', 'DUB', 'DUBBED', 'HARDSUB', 'HARDSUBS', 'RAW',
             'SOFTSUB', 'SOFTSUBS', 'SUB', 'SUBBED', 'SUBTITLED',
-            'MULTIPLE SUBTITLE', 'MULTI SUBS', 'MULTI-SUBS'])
+            'MULTIPLE SUBTITLE', 'MULTI SUBS', 'MULTI-SUBS',
+            'SRT'
+        ])
 
         self.add(ElementCategory.VIDEO_TERM, options_default, [
             # Frame rate
             '23.976FPS', '24FPS', '29.97FPS', '30FPS', '60FPS', '120FPS',
             # Video codec
             '8BIT', '8-BIT', '10BIT', '10BITS', '10-BIT', '10-BITS',
-            'HI10', 'HI10P', 'HI444', 'HI444P', 'HI444PP',
+            'HI10', 'HI10P', 'HI444', 'HI444P', 'HI444PP', 'Ma10p',
+            'HDR', 'DV', 'DOLBY VISION',
             'H264', 'H265', 'H.264', 'H.265', 'X264', 'X265', 'X.264',
             'AVC', 'HEVC', 'HEVC2', 'DIVX', 'DIVX5', 'DIVX6', 'XVID',
+            'AV1',
             # Video format
-            'AVI', 'RMVB', 'WMV', 'WMV3', 'WMV9',
+            'AVI', 'RMVB', 'WMV', 'WMV3', 'WMV9', 'MP4', 'MKV',
             # Video quality
             'HQ', 'LQ',
             # Video resolution
-            'HD', 'SD'])
+            '4K', 'HD', 'SD', '1080P', '2160P', '1080p', '2160p',
+            # VCB
+            'Ma10p_1080p'
+        ])
 
         self.add(ElementCategory.VOLUME_PREFIX, options_default, [
             'VOL', 'VOL.', 'VOLUME'])
@@ -153,8 +168,8 @@ class KeywordManager:
     def peek(elements, string):
         entries = [
             (ElementCategory.AUDIO_TERM, ['Dual Audio', 'Multi Audio']),
-            (ElementCategory.VIDEO_TERM, ['H264', 'H.264', 'h264', 'h.264']),
-            (ElementCategory.VIDEO_RESOLUTION, ['480p', '720p', '1080p']),
+            (ElementCategory.VIDEO_TERM, ['H264', 'H.264', 'h264', 'h.264', 'H265', 'H.265', 'h265', 'h.265']),
+            (ElementCategory.VIDEO_RESOLUTION, ['480p', '720p', '1080p', '2160p']),
             (ElementCategory.SUBTITLES, ['Multiple Subtitle', 'Multi Subs']),
             (ElementCategory.SOURCE, ['Blu-Ray'])
         ]
