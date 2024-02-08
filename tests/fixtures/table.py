@@ -2178,5 +2178,23 @@ table = [
             'file_name': "[Airota&VCB-Studio] Toaru Kagaku no Accelerator [01][Ma10p_1080p][x265_flac_aac]",
             'release_group': 'Airota&VCB-Studio'
         }
+    ], [
+        "[Nekomoe kissaten&LoliHouse] Sengoku Youko - 05 [WebRip 1080p HEVC-10bit AAC ASSx2].mkv",
+        None,
+        {
+
+        }
+    ], [
+        "[Nekomoe kissaten&LoliHouse] Sengoku Youko - S00E15 [WebRip 1080p HEVC-10bit AAC ASSx2].mkv",
+        None,
+        {
+
+        }
+    ], [
+        "[Nekomoe kissaten&LoliHouse] Sengoku Youko - S01E15 [WebRip 1080p HEVC-10bit AAC ASSx2].mkv",
+        None,
+        {
+
+        }
     ],
 ]

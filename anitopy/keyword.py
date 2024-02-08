@@ -119,18 +119,19 @@ class KeywordManager:
             'ASS', 'DUB', 'DUBBED', 'HARDSUB', 'HARDSUBS', 'RAW',
             'SOFTSUB', 'SOFTSUBS', 'SUB', 'SUBBED', 'SUBTITLED',
             'MULTIPLE SUBTITLE', 'MULTI SUBS', 'MULTI-SUBS',
-            'SRT'
+            'SRT',
+            'ASSx2', 'ASSx3', 'SRTx2', 'SRTx3',
         ])
 
         self.add(ElementCategory.VIDEO_TERM, options_default, [
             # Frame rate
             '23.976FPS', '24FPS', '29.97FPS', '30FPS', '60FPS', '120FPS',
             # Video codec
-            '8BIT', '8-BIT', '10BIT', '10BITS', '10-BIT', '10-BITS',
+            '8BIT', '8-BIT', '10BIT', '10BITS', '10-BIT', '10-BITS', '12BIT', '12BITS',
             'HI10', 'HI10P', 'HI444', 'HI444P', 'HI444PP', 'Ma10p',
             'HDR', 'DV', 'DOLBY VISION',
             'H264', 'H265', 'H.264', 'H.265', 'X264', 'X265', 'X.264',
-            'AVC', 'HEVC', 'HEVC2', 'DIVX', 'DIVX5', 'DIVX6', 'XVID',
+            'AVC', 'HEVC', 'DIVX', 'DIVX5', 'DIVX6', 'XVID',
             'AV1',
             # Video format
             'AVI', 'RMVB', 'WMV', 'WMV3', 'WMV9', 'MP4', 'MKV',
@@ -198,8 +199,8 @@ class KeywordManager:
 
     def _get_keyword_container(self, category):
         return self._file_extensions \
-               if category == ElementCategory.FILE_EXTENSION \
-               else self._keys
+            if category == ElementCategory.FILE_EXTENSION \
+            else self._keys
 
 
 keyword_manager = KeywordManager()

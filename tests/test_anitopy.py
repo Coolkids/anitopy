@@ -2,6 +2,8 @@
 
 from __future__ import unicode_literals
 
+import json
+import sys
 from unittest import TestCase
 
 import anitopy
@@ -31,7 +33,7 @@ class TestAnitopy(TestCase):
             if 'id' in expected.keys():
                 del expected['id']
 
-            print(elements)
+            print(json.dumps(elements))
             # self.assertEqual(expected, elements, 'on entry number %d' % index)
 
     def test_fails(self):
